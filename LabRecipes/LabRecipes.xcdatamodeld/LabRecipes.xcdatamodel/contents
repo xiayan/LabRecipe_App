@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11C74" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Buffer" representedClassName="Buffer" syncable="YES">
+        <attribute name="bufferInstruction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bufferIsMolar" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="bufferIsSolid" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="bufferMagnitude" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="bufferMW" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bufferName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bufferStockConc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bufferUnit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bufferVolume" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bufferVolumeMagnitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="bufferVolumeUnit" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Ingredient" representedClassName="Ingredient" syncable="YES">
+        <attribute name="displayOrder" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="finalIsMolar" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="ingredientConc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ingredientFinalConc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ingredientFinalMagnitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="ingredientFinalUnit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ingredientMagnitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="ingredientName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ingredientUnit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isMolar" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="recipe" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="ingredients" inverseEntity="Recipe" syncable="YES"/>
+    </entity>
+    <entity name="Recipe" representedClassName="Recipe" syncable="YES">
+        <attribute name="recipeMagnitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="recipeName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recipeUnit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recipeVolume" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Ingredient" inverseName="recipe" inverseEntity="Ingredient" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Buffer" positionX="160" positionY="192" width="128" height="210"/>
+        <element name="Ingredient" positionX="-9" positionY="288" width="128" height="135"/>
+        <element name="Recipe" positionX="-126" positionY="36" width="128" height="120"/>
+    </elements>
+</model>
